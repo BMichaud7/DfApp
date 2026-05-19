@@ -45,7 +45,7 @@ def make_iq(ant_x, ant_y, bearing_deg, freq_hz, snr_db, rng):
     phase = spatial_phase + 2 * math.pi * TONE_HZ * t
     I     = np.cos(phase) + rng.normal(0, noise_sigma, N_SAMPLES)
     Q     = np.sin(phase) + rng.normal(0, noise_sigma, N_SAMPLES)
-    return list(np.column_stack([I, Q]).ravel().astype(np.float32))
+    return np.column_stack([I, Q]).ravel().astype(np.float32).tolist()
 
 
 class Injector(MessagingHandler):
