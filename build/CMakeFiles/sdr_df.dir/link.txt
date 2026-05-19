@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/sdr_df.dir/link.d CMakeFiles/sdr_df.dir/src/Config.cpp.o CMakeFiles/sdr_df.dir/src/DfEngine.cpp.o CMakeFiles/sdr_df.dir/src/DfService.cpp.o CMakeFiles/sdr_df.dir/src/main.cpp.o -o sdr_df  SdrTaskApi/libsdr_task_api.a _deps/spdlog-build/libspdlog.a /usr/lib64/libqpid-proton-cpp.so.12.13.1 /usr/lib64/libtinyxml2.so

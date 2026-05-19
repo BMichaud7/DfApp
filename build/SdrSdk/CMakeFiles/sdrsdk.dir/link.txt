@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsdrsdk.a CMakeFiles/sdrsdk.dir/src/SdrClient.cpp.o CMakeFiles/sdrsdk.dir/src/IqStream.cpp.o CMakeFiles/sdrsdk.dir/src/Spectrum.cpp.o
-/usr/bin/ranlib libsdrsdk.a
