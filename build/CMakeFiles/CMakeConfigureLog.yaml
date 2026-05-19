@@ -1,0 +1,1729 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.12.0-222.el10.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/brendan/DfApp/build/CMakeFiles/3.31.8/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_84a74/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_84a74.dir/build.make CMakeFiles/cmTC_84a74.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO'
+        Building CXX object CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_84a74.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_84a74.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v3 -version -o /tmp/cc1iJnaF.s
+        GNU C++17 (GCC) version 14.3.1 20251022 (Red Hat 14.3.1-4) (x86_64-redhat-linux)
+        	compiled by GNU C version 14.3.1 20251022 (Red Hat 14.3.1-4), GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.3.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14
+         /usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/x86_64-redhat-linux
+         /usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/backward
+         /usr/lib/gcc/x86_64-redhat-linux/14/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 3c1db862484fe501b682e15226bd46f0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_84a74.dir/'
+         as -v --64 -o CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1iJnaF.s
+        GNU assembler version 2.41 (x86_64-redhat-linux) using BFD version version 2.41-65.el10
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_84a74
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84a74.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84a74' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'cmTC_84a74.'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsZyJmO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_84a74 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        collect2 version 14.3.1 20251022 (Red Hat 14.3.1-4)
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsZyJmO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_84a74 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        GNU ld version 2.41-65.el10
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84a74' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'cmTC_84a74.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_84a74
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/x86_64-redhat-linux]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/backward]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/x86_64-redhat-linux] ==> [/usr/include/c++/14/x86_64-redhat-linux]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/14/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/c++/14/x86_64-redhat-linux;/usr/include/c++/14/backward;/usr/lib/gcc/x86_64-redhat-linux/14/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_84a74/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_84a74.dir/build.make CMakeFiles/cmTC_84a74.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-BcJLHO']
+        ignore line: [Building CXX object CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_84a74.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_84a74.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v3 -version -o /tmp/cc1iJnaF.s]
+        ignore line: [GNU C++17 (GCC) version 14.3.1 20251022 (Red Hat 14.3.1-4) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 14.3.1 20251022 (Red Hat 14.3.1-4)  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.3.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/x86_64-redhat-linux]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/14/../../../../include/c++/14/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 3c1db862484fe501b682e15226bd46f0]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_84a74.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1iJnaF.s]
+        ignore line: [GNU assembler version 2.41 (x86_64-redhat-linux) using BFD version version 2.41-65.el10]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_84a74]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84a74.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84a74' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'cmTC_84a74.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsZyJmO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_84a74 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccsZyJmO.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_84a74] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/14] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/14/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 14.3.1 20251022 (Red Hat 14.3.1-4)]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsZyJmO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_84a74 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_84a74.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/14] ==> [/usr/lib/gcc/x86_64-redhat-linux/14]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/14;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.41-65.el10
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:8 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-a1HdUe"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-a1HdUe"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-a1HdUe'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3d03c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3d03c.dir/build.make CMakeFiles/cmTC_3d03c.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-a1HdUe'
+        Building CXX object CMakeFiles/cmTC_3d03c.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++20 -o CMakeFiles/cmTC_3d03c.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-a1HdUe/src.cxx
+        Linking CXX executable cmTC_3d03c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d03c.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_3d03c.dir/src.cxx.o -o cmTC_3d03c
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-a1HdUe'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/brendan/DfApp/build/CMakeFiles/3.31.8/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e0492/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e0492.dir/build.make CMakeFiles/cmTC_e0492.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI'
+        Building C object CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_e0492.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e0492.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v3 -version -o /tmp/ccRH2mGp.s
+        GNU C17 (GCC) version 14.3.1 20251022 (Red Hat 14.3.1-4) (x86_64-redhat-linux)
+        	compiled by GNU C version 14.3.1 20251022 (Red Hat 14.3.1-4), GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.3.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/14/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 7698130c5a033e1b2097f0f522bda915
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_e0492.dir/'
+         as -v --64 -o CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o /tmp/ccRH2mGp.s
+        GNU assembler version 2.41 (x86_64-redhat-linux) using BFD version version 2.41-65.el10
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_e0492
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0492.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e0492' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'cmTC_e0492.'
+         /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLiHhVt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e0492 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        collect2 version 14.3.1 20251022 (Red Hat 14.3.1-4)
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLiHhVt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e0492 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o
+        GNU ld version 2.41-65.el10
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e0492' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'cmTC_e0492.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -o cmTC_e0492
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/14/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/14/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e0492/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e0492.dir/build.make CMakeFiles/cmTC_e0492.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Aqm4GI']
+        ignore line: [Building C object CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_e0492.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e0492.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v3 -version -o /tmp/ccRH2mGp.s]
+        ignore line: [GNU C17 (GCC) version 14.3.1 20251022 (Red Hat 14.3.1-4) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 14.3.1 20251022 (Red Hat 14.3.1-4)  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.3.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/14/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 7698130c5a033e1b2097f0f522bda915]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_e0492.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o /tmp/ccRH2mGp.s]
+        ignore line: [GNU assembler version 2.41 (x86_64-redhat-linux) using BFD version version 2.41-65.el10]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_e0492]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0492.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --without-isl --enable-host-pie --enable-host-bind-now --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v3 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.3.1 20251022 (Red Hat 14.3.1-4) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/14/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/14/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e0492' '-mtune=generic' '-march=x86-64-v3' '-dumpdir' 'cmTC_e0492.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/14/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLiHhVt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e0492 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccLiHhVt.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_e0492] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/14] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/14/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 14.3.1 20251022 (Red Hat 14.3.1-4)]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLiHhVt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e0492 /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/14 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/14/../../.. -v CMakeFiles/cmTC_e0492.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/14/crtend.o /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/14] ==> [/usr/lib/gcc/x86_64-redhat-linux/14]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/14/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/14/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/14;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:4 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.41-65.el10
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:77 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test EIGEN_COMPILER_SUPPORT_CPP11"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-bI15Op"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-bI15Op"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "EIGEN_COMPILER_SUPPORT_CPP11"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-bI15Op'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0cfdd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0cfdd.dir/build.make CMakeFiles/cmTC_0cfdd.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-bI15Op'
+        Building CXX object CMakeFiles/cmTC_0cfdd.dir/src.cxx.o
+        /usr/bin/c++ -DEIGEN_COMPILER_SUPPORT_CPP11  -std=c++20   -std=c++11 -o CMakeFiles/cmTC_0cfdd.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-bI15Op/src.cxx
+        Linking CXX executable cmTC_0cfdd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0cfdd.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_0cfdd.dir/src.cxx.o -o cmTC_0cfdd
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-bI15Op'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:88 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_std=cpp03"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Cqoh1z"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Cqoh1z"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_std=cpp03"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Cqoh1z'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_63cbc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_63cbc.dir/build.make CMakeFiles/cmTC_63cbc.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Cqoh1z'
+        Building CXX object CMakeFiles/cmTC_63cbc.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_std=cpp03  -std=c++20   -std=c++03 -o CMakeFiles/cmTC_63cbc.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Cqoh1z/src.cxx
+        Linking CXX executable cmTC_63cbc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63cbc.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_63cbc.dir/src.cxx.o -o cmTC_63cbc
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Cqoh1z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "build/_deps/eigen3-src/cmake/FindStandardMathLibrary.cmake:35 (CHECK_CXX_SOURCE_COMPILES)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:98 (find_package)"
+    checks:
+      - "Performing Test standard_math_library_linked_to_automatically"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-wFv1AB"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-wFv1AB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "standard_math_library_linked_to_automatically"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-wFv1AB'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_99705/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_99705.dir/build.make CMakeFiles/cmTC_99705.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-wFv1AB'
+        Building CXX object CMakeFiles/cmTC_99705.dir/src.cxx.o
+        /usr/bin/c++ -Dstandard_math_library_linked_to_automatically  -std=c++03  -std=c++20 -o CMakeFiles/cmTC_99705.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-wFv1AB/src.cxx
+        Linking CXX executable cmTC_99705
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99705.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03  CMakeFiles/cmTC_99705.dir/src.cxx.o -o cmTC_99705
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-wFv1AB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:150 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_WERROR"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Qyn343"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Qyn343"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_WERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Qyn343'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_25cb5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_25cb5.dir/build.make CMakeFiles/cmTC_25cb5.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Qyn343'
+        Building CXX object CMakeFiles/cmTC_25cb5.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_WERROR  -std=c++03  -std=c++20   -Werror -o CMakeFiles/cmTC_25cb5.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Qyn343/src.cxx
+        Linking CXX executable cmTC_25cb5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25cb5.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03  CMakeFiles/cmTC_25cb5.dir/src.cxx.o -o cmTC_25cb5
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Qyn343'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:154 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_pedantic"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y8Bkih"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y8Bkih"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_pedantic"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y8Bkih'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1dac6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1dac6.dir/build.make CMakeFiles/cmTC_1dac6.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y8Bkih'
+        Building CXX object CMakeFiles/cmTC_1dac6.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_pedantic  -std=c++03 -Werror -std=c++20   -pedantic -o CMakeFiles/cmTC_1dac6.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y8Bkih/src.cxx
+        Linking CXX executable cmTC_1dac6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1dac6.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -Werror CMakeFiles/cmTC_1dac6.dir/src.cxx.o -o cmTC_1dac6
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y8Bkih'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:155 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wall"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VISnlH"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VISnlH"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wall"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VISnlH'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_29e48/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_29e48.dir/build.make CMakeFiles/cmTC_29e48.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VISnlH'
+        Building CXX object CMakeFiles/cmTC_29e48.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wall  -std=c++03 -pedantic -Werror -std=c++20   -Wall -o CMakeFiles/cmTC_29e48.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VISnlH/src.cxx
+        Linking CXX executable cmTC_29e48
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29e48.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Werror CMakeFiles/cmTC_29e48.dir/src.cxx.o -o cmTC_29e48
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VISnlH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:156 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wextra"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-vGPZWZ"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-vGPZWZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wextra"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-vGPZWZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_10319/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_10319.dir/build.make CMakeFiles/cmTC_10319.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-vGPZWZ'
+        Building CXX object CMakeFiles/cmTC_10319.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wextra  -std=c++03 -pedantic -Wall -Werror -std=c++20   -Wextra -o CMakeFiles/cmTC_10319.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-vGPZWZ/src.cxx
+        Linking CXX executable cmTC_10319
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10319.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Werror CMakeFiles/cmTC_10319.dir/src.cxx.o -o cmTC_10319
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-vGPZWZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:159 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wundef"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-dobGkm"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-dobGkm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wundef"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-dobGkm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_28771/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_28771.dir/build.make CMakeFiles/cmTC_28771.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-dobGkm'
+        Building CXX object CMakeFiles/cmTC_28771.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wundef  -std=c++03 -pedantic -Wall -Wextra -Werror -std=c++20   -Wundef -o CMakeFiles/cmTC_28771.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-dobGkm/src.cxx
+        Linking CXX executable cmTC_28771
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28771.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Werror CMakeFiles/cmTC_28771.dir/src.cxx.o -o cmTC_28771
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-dobGkm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:160 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wcastalign"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-YLtHGd"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-YLtHGd"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wcastalign"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-YLtHGd'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7554b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7554b.dir/build.make CMakeFiles/cmTC_7554b.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-YLtHGd'
+        Building CXX object CMakeFiles/cmTC_7554b.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wcastalign  -std=c++03 -pedantic -Wall -Wextra -Wundef -Werror -std=c++20   -Wcast-align -o CMakeFiles/cmTC_7554b.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-YLtHGd/src.cxx
+        Linking CXX executable cmTC_7554b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7554b.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Werror CMakeFiles/cmTC_7554b.dir/src.cxx.o -o cmTC_7554b
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-YLtHGd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:161 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wcharsubscripts"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-oAJKXS"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-oAJKXS"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wcharsubscripts"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-oAJKXS'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0a7b3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0a7b3.dir/build.make CMakeFiles/cmTC_0a7b3.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-oAJKXS'
+        Building CXX object CMakeFiles/cmTC_0a7b3.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wcharsubscripts  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Werror -std=c++20   -Wchar-subscripts -o CMakeFiles/cmTC_0a7b3.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-oAJKXS/src.cxx
+        Linking CXX executable cmTC_0a7b3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a7b3.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Werror CMakeFiles/cmTC_0a7b3.dir/src.cxx.o -o cmTC_0a7b3
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-oAJKXS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:162 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wnonvirtualdtor"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-feU5kX"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-feU5kX"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wnonvirtualdtor"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-feU5kX'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ac807/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ac807.dir/build.make CMakeFiles/cmTC_ac807.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-feU5kX'
+        Building CXX object CMakeFiles/cmTC_ac807.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wnonvirtualdtor  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Werror -std=c++20   -Wnon-virtual-dtor -o CMakeFiles/cmTC_ac807.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-feU5kX/src.cxx
+        Linking CXX executable cmTC_ac807
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac807.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Werror CMakeFiles/cmTC_ac807.dir/src.cxx.o -o cmTC_ac807
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-feU5kX'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:163 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wunusedlocaltypedefs"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DieL2g"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DieL2g"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wunusedlocaltypedefs"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DieL2g'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_db528/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_db528.dir/build.make CMakeFiles/cmTC_db528.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DieL2g'
+        Building CXX object CMakeFiles/cmTC_db528.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wunusedlocaltypedefs  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Werror -std=c++20   -Wunused-local-typedefs -o CMakeFiles/cmTC_db528.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DieL2g/src.cxx
+        Linking CXX executable cmTC_db528
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db528.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Werror CMakeFiles/cmTC_db528.dir/src.cxx.o -o cmTC_db528
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DieL2g'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:164 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wpointerarith"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-WHM82s"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-WHM82s"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wpointerarith"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-WHM82s'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9e605/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9e605.dir/build.make CMakeFiles/cmTC_9e605.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-WHM82s'
+        Building CXX object CMakeFiles/cmTC_9e605.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wpointerarith  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Werror -std=c++20   -Wpointer-arith -o CMakeFiles/cmTC_9e605.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-WHM82s/src.cxx
+        Linking CXX executable cmTC_9e605
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e605.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Werror CMakeFiles/cmTC_9e605.dir/src.cxx.o -o cmTC_9e605
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-WHM82s'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:165 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wwritestrings"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-aHbjLm"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-aHbjLm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wwritestrings"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-aHbjLm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b2c13/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b2c13.dir/build.make CMakeFiles/cmTC_b2c13.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-aHbjLm'
+        Building CXX object CMakeFiles/cmTC_b2c13.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wwritestrings  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Werror -std=c++20   -Wwrite-strings -o CMakeFiles/cmTC_b2c13.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-aHbjLm/src.cxx
+        Linking CXX executable cmTC_b2c13
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2c13.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Werror CMakeFiles/cmTC_b2c13.dir/src.cxx.o -o cmTC_b2c13
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-aHbjLm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:166 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wformatsecurity"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-UInaU5"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-UInaU5"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wformatsecurity"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-UInaU5'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a2022/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a2022.dir/build.make CMakeFiles/cmTC_a2022.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-UInaU5'
+        Building CXX object CMakeFiles/cmTC_a2022.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wformatsecurity  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Werror -std=c++20   -Wformat-security -o CMakeFiles/cmTC_a2022.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-UInaU5/src.cxx
+        Linking CXX executable cmTC_a2022
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2022.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Werror CMakeFiles/cmTC_a2022.dir/src.cxx.o -o cmTC_a2022
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-UInaU5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:167 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wshorten64to32"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-KL4dSp"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-KL4dSp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wshorten64to32"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-KL4dSp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6ba9e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6ba9e.dir/build.make CMakeFiles/cmTC_6ba9e.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-KL4dSp'
+        Building CXX object CMakeFiles/cmTC_6ba9e.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wshorten64to32  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror -std=c++20   -Wshorten-64-to-32 -o CMakeFiles/cmTC_6ba9e.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-KL4dSp/src.cxx
+        c++: error: unrecognized command-line option '-Wshorten-64-to-32'
+        gmake[1]: *** [CMakeFiles/cmTC_6ba9e.dir/build.make:81: CMakeFiles/cmTC_6ba9e.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-KL4dSp'
+        gmake: *** [Makefile:134: cmTC_6ba9e/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:168 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wlogicalop"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-11Rvtw"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-11Rvtw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wlogicalop"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-11Rvtw'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bfa03/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bfa03.dir/build.make CMakeFiles/cmTC_bfa03.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-11Rvtw'
+        Building CXX object CMakeFiles/cmTC_bfa03.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wlogicalop  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror -std=c++20   -Wlogical-op -o CMakeFiles/cmTC_bfa03.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-11Rvtw/src.cxx
+        Linking CXX executable cmTC_bfa03
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bfa03.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror CMakeFiles/cmTC_bfa03.dir/src.cxx.o -o cmTC_bfa03
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-11Rvtw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:169 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wenumconversion"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-TfPFwN"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-TfPFwN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wenumconversion"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-TfPFwN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_94b42/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_94b42.dir/build.make CMakeFiles/cmTC_94b42.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-TfPFwN'
+        Building CXX object CMakeFiles/cmTC_94b42.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wenumconversion  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror -std=c++20   -Wenum-conversion -o CMakeFiles/cmTC_94b42.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-TfPFwN/src.cxx
+        Linking CXX executable cmTC_94b42
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94b42.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror CMakeFiles/cmTC_94b42.dir/src.cxx.o -o cmTC_94b42
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-TfPFwN'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:170 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wcpp11extensions"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-8GzB6P"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-8GzB6P"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wcpp11extensions"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-8GzB6P'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cf492/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cf492.dir/build.make CMakeFiles/cmTC_cf492.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-8GzB6P'
+        Building CXX object CMakeFiles/cmTC_cf492.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wcpp11extensions  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror -std=c++20   -Wc++11-extensions -o CMakeFiles/cmTC_cf492.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-8GzB6P/src.cxx
+        Linking CXX executable cmTC_cf492
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf492.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror CMakeFiles/cmTC_cf492.dir/src.cxx.o -o cmTC_cf492
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-8GzB6P'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:171 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wdoublepromotion"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7i4VCZ"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7i4VCZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wdoublepromotion"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7i4VCZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bf4a4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bf4a4.dir/build.make CMakeFiles/cmTC_bf4a4.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7i4VCZ'
+        Building CXX object CMakeFiles/cmTC_bf4a4.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wdoublepromotion  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Werror -std=c++20   -Wdouble-promotion -o CMakeFiles/cmTC_bf4a4.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7i4VCZ/src.cxx
+        Linking CXX executable cmTC_bf4a4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf4a4.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Werror CMakeFiles/cmTC_bf4a4.dir/src.cxx.o -o cmTC_bf4a4
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7i4VCZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:174 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wshadow"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VIkXb6"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VIkXb6"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wshadow"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VIkXb6'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3232b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3232b.dir/build.make CMakeFiles/cmTC_3232b.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VIkXb6'
+        Building CXX object CMakeFiles/cmTC_3232b.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wshadow  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Werror -std=c++20   -Wshadow -o CMakeFiles/cmTC_3232b.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VIkXb6/src.cxx
+        Linking CXX executable cmTC_3232b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3232b.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Werror CMakeFiles/cmTC_3232b.dir/src.cxx.o -o cmTC_3232b
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-VIkXb6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:176 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wnopsabi"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Nw0Rxs"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Nw0Rxs"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wnopsabi"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Nw0Rxs'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1feb8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1feb8.dir/build.make CMakeFiles/cmTC_1feb8.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Nw0Rxs'
+        Building CXX object CMakeFiles/cmTC_1feb8.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wnopsabi  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Werror -std=c++20   -Wno-psabi -o CMakeFiles/cmTC_1feb8.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Nw0Rxs/src.cxx
+        Linking CXX executable cmTC_1feb8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1feb8.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Werror CMakeFiles/cmTC_1feb8.dir/src.cxx.o -o cmTC_1feb8
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Nw0Rxs'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:177 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wnovariadicmacros"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-ld03cX"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-ld03cX"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wnovariadicmacros"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-ld03cX'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7fcf3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7fcf3.dir/build.make CMakeFiles/cmTC_7fcf3.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-ld03cX'
+        Building CXX object CMakeFiles/cmTC_7fcf3.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wnovariadicmacros  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Werror -std=c++20   -Wno-variadic-macros -o CMakeFiles/cmTC_7fcf3.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-ld03cX/src.cxx
+        Linking CXX executable cmTC_7fcf3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fcf3.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Werror CMakeFiles/cmTC_7fcf3.dir/src.cxx.o -o cmTC_7fcf3
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-ld03cX'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:178 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Wnolonglong"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-JRRZ2N"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-JRRZ2N"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Wnolonglong"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-JRRZ2N'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3c13b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3c13b.dir/build.make CMakeFiles/cmTC_3c13b.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-JRRZ2N'
+        Building CXX object CMakeFiles/cmTC_3c13b.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Wnolonglong  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Werror -std=c++20   -Wno-long-long -o CMakeFiles/cmTC_3c13b.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-JRRZ2N/src.cxx
+        Linking CXX executable cmTC_3c13b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c13b.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Werror CMakeFiles/cmTC_3c13b.dir/src.cxx.o -o cmTC_3c13b
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-JRRZ2N'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:180 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_fnochecknew"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-IGYq2k"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-IGYq2k"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_fnochecknew"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-IGYq2k'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_de329/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_de329.dir/build.make CMakeFiles/cmTC_de329.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-IGYq2k'
+        Building CXX object CMakeFiles/cmTC_de329.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_fnochecknew  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -Werror -std=c++20   -fno-check-new -o CMakeFiles/cmTC_de329.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-IGYq2k/src.cxx
+        Linking CXX executable cmTC_de329
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de329.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -Werror CMakeFiles/cmTC_de329.dir/src.cxx.o -o cmTC_de329
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-IGYq2k'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:181 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_fnocommon"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Ugn8r3"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Ugn8r3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_fnocommon"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Ugn8r3'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_54091/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_54091.dir/build.make CMakeFiles/cmTC_54091.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Ugn8r3'
+        Building CXX object CMakeFiles/cmTC_54091.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_fnocommon  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -Werror -std=c++20   -fno-common -o CMakeFiles/cmTC_54091.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Ugn8r3/src.cxx
+        Linking CXX executable cmTC_54091
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54091.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -Werror CMakeFiles/cmTC_54091.dir/src.cxx.o -o cmTC_54091
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Ugn8r3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:182 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_fstrictaliasing"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-sv2yhh"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-sv2yhh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_fstrictaliasing"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-sv2yhh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_927e7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_927e7.dir/build.make CMakeFiles/cmTC_927e7.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-sv2yhh'
+        Building CXX object CMakeFiles/cmTC_927e7.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_fstrictaliasing  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -Werror -std=c++20   -fstrict-aliasing -o CMakeFiles/cmTC_927e7.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-sv2yhh/src.cxx
+        Linking CXX executable cmTC_927e7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_927e7.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -Werror CMakeFiles/cmTC_927e7.dir/src.cxx.o -o cmTC_927e7
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-sv2yhh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:183 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_wd981"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DYFqrT"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DYFqrT"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_wd981"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DYFqrT'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_92aef/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_92aef.dir/build.make CMakeFiles/cmTC_92aef.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DYFqrT'
+        Building CXX object CMakeFiles/cmTC_92aef.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_wd981  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=c++20   -wd981 -o CMakeFiles/cmTC_92aef.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DYFqrT/src.cxx
+        c++: error: unrecognized command-line option '-wd981'
+        gmake[1]: *** [CMakeFiles/cmTC_92aef.dir/build.make:81: CMakeFiles/cmTC_92aef.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-DYFqrT'
+        gmake: *** [Makefile:134: cmTC_92aef/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:184 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_wd2304"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-QNDmU3"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-QNDmU3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_wd2304"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-QNDmU3'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_754cf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_754cf.dir/build.make CMakeFiles/cmTC_754cf.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-QNDmU3'
+        Building CXX object CMakeFiles/cmTC_754cf.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_wd2304  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=c++20   -wd2304 -o CMakeFiles/cmTC_754cf.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-QNDmU3/src.cxx
+        c++: error: unrecognized command-line option '-wd2304'
+        gmake[1]: *** [CMakeFiles/cmTC_754cf.dir/build.make:81: CMakeFiles/cmTC_754cf.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-QNDmU3'
+        gmake: *** [Makefile:134: cmTC_754cf/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:189 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_STRICTANSI"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-t2068l"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-t2068l"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_STRICTANSI"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-t2068l'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a34bf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a34bf.dir/build.make CMakeFiles/cmTC_a34bf.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-t2068l'
+        Building CXX object CMakeFiles/cmTC_a34bf.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_STRICTANSI  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=c++20   -strict-ansi -o CMakeFiles/cmTC_a34bf.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-t2068l/src.cxx
+        c++: error: unrecognized command-line option '-strict-ansi'; did you mean '-fstrict-enums'?
+        gmake[1]: *** [CMakeFiles/cmTC_a34bf.dir/build.make:81: CMakeFiles/cmTC_a34bf.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-t2068l'
+        gmake: *** [Makefile:134: cmTC_a34bf/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:190 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_Qunusedarguments"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y3XsKf"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y3XsKf"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_Qunusedarguments"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y3XsKf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c97fc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c97fc.dir/build.make CMakeFiles/cmTC_c97fc.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y3XsKf'
+        Building CXX object CMakeFiles/cmTC_c97fc.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_Qunusedarguments  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=c++20   -Qunused-arguments -o CMakeFiles/cmTC_c97fc.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y3XsKf/src.cxx
+        c++: error: unrecognized command-line option '-Qunused-arguments'
+        gmake[1]: *** [CMakeFiles/cmTC_c97fc.dir/build.make:81: CMakeFiles/cmTC_c97fc.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-Y3XsKf'
+        gmake: *** [Makefile:134: cmTC_c97fc/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:71 (check_cxx_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:195 (ei_add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_ansi"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7DbHvk"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7DbHvk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_ansi"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7DbHvk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_85961/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_85961.dir/build.make CMakeFiles/cmTC_85961.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7DbHvk'
+        Building CXX object CMakeFiles/cmTC_85961.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_ansi  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -std=c++20   -ansi -o CMakeFiles/cmTC_85961.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7DbHvk/src.cxx
+        Linking CXX executable cmTC_85961
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85961.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror CMakeFiles/cmTC_85961.dir/src.cxx.o -o cmTC_85961
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-7DbHvk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/eigen3-src/CMakeLists.txt:324 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test COMPILER_SUPPORT_OPENMP"
+    directories:
+      source: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-CMjkYW"
+      binary: "/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-CMjkYW"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brendan/DfApp/build/_deps/eigen3-src/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORT_OPENMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-CMjkYW'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a8754/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a8754.dir/build.make CMakeFiles/cmTC_a8754.dir/build
+        gmake[1]: Entering directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-CMjkYW'
+        Building CXX object CMakeFiles/cmTC_a8754.dir/src.cxx.o
+        /usr/bin/c++ -DCOMPILER_SUPPORT_OPENMP  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi  -std=c++20   -fopenmp -o CMakeFiles/cmTC_a8754.dir/src.cxx.o -c /home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-CMjkYW/src.cxx
+        Linking CXX executable cmTC_a8754
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8754.dir/link.txt --verbose=1
+        /usr/bin/c++  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi  CMakeFiles/cmTC_a8754.dir/src.cxx.o -o cmTC_a8754
+        gmake[1]: Leaving directory '/home/brendan/DfApp/build/CMakeFiles/CMakeScratch/TryCompile-CMjkYW'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLanguage.cmake:140 (message)"
+      - "build/_deps/eigen3-src/blas/CMakeLists.txt:5 (check_language)"
+    checks:
+      - "Looking for a Fortran compiler"
+    message: |
+      Looking for a Fortran compiler failed with the following output:
+      -- The Fortran compiler identification is unknown
+      CMake Error at CMakeLists.txt:3 (project):
+        No CMAKE_Fortran_COMPILER could be found.
+      
+        Tell CMake where to find the compiler by setting either the environment
+        variable "FC" or the CMake cache entry CMAKE_Fortran_COMPILER to the full
+        path to the compiler, or to the compiler name if it is in the PATH.
+      
+      
+      -- Configuring incomplete, errors occurred!
+      
+...

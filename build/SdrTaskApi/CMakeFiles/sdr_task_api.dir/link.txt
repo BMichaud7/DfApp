@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsdr_task_api.a CMakeFiles/sdr_task_api.dir/src/MessageCodec.cpp.o
+/usr/bin/ranlib libsdr_task_api.a

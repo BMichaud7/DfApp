@@ -1,0 +1,3 @@
+/home/brendan/DfApp/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate.dir
+/home/brendan/DfApp/build/_deps/spdlog-subbuild/CMakeFiles/edit_cache.dir
+/home/brendan/DfApp/build/_deps/spdlog-subbuild/CMakeFiles/rebuild_cache.dir

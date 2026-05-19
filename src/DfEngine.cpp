@@ -76,8 +76,11 @@ DfResult DfEngine::compute(
 
         Eigen::VectorXcd a(M);
         for (int i = 0; i < M; ++i) {
-            double phase = -k * (antennas[i].x * std::sin(bearing_rad)
-                                + antennas[i].y * std::cos(bearing_rad));
+            // Standard array processing convention: phase advance = +k·(x·sinθ + y·cosθ)
+            // Antennas with positive projection towards the source receive the
+            // wavefront earlier → positive phase (phase-advance convention).
+            double phase = k * (antennas[i].x * std::sin(bearing_rad)
+                               + antennas[i].y * std::cos(bearing_rad));
             a(i) = std::exp(Cx(0.0, phase));
         }
 

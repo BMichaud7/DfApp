@@ -1,0 +1,5 @@
+if(EXISTS "/home/brendan/DfApp/build/df_tests[1]_tests.cmake")
+  include("/home/brendan/DfApp/build/df_tests[1]_tests.cmake")
+else()
+  add_test(df_tests_NOT_BUILT df_tests_NOT_BUILT)
+endif()
