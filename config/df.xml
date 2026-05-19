@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DfApp configuration — 5-element PlutoSDR array -->
+<df_config>
+
+  <scanner_id>df-0</scanner_id>
+
+  <amqp>
+    <url>amqp://localhost:5672</url>
+    <username>sdr_ctrl</username>
+    <password>your_password</password>
+    <detections_topic>rf.detections</detections_topic>
+    <df_results_topic>rf.df_results</df_results_topic>
+  </amqp>
+
+  <database>
+    <host>localhost</host><port>5432</port><name>sdr_scanner</name>
+    <user>sdr</user><password>your_password</password>
+  </database>
+
+  <!--
+    Antenna positions in metres, ENU frame (x=East, y=North, z=Up).
+    Measure from any fixed reference point on your antenna mast / vehicle roof.
+    scanner_id must match the scanner_id in each AcquisitionApp's scanner.xml.
+
+    Example: 5-element uniform circular array (UCA) with 2 m radius:
+      Element 0: centre   (reference)
+      Elements 1-4: on a circle at 72° intervals
+  -->
+  <array>
+    <antenna scanner_id="scanner-0" x="0.00" y="0.00" z="0.00"/>
+    <antenna scanner_id="scanner-1" x="1.90" y="0.62" z="0.00"/>
+    <antenna scanner_id="scanner-2" x="1.18" y="1.62" z="0.00"/>
+    <antenna scanner_id="scanner-3" x="-1.18" y="1.62" z="0.00"/>
+    <antenna scanner_id="scanner-4" x="-1.90" y="0.62" z="0.00"/>
+  </array>
+
+  <df>
+    <!-- MUSIC: Multiple Signal Classification — optimal for coherent arrays -->
+    <algorithm>MUSIC</algorithm>
+
+    <!-- Collect snapshots within this window before computing.
+         All 5 PlutoSDRs should report the same signal within one sweep pass. -->
+    <aggregation_window_ms>5000</aggregation_window_ms>
+
+    <!-- Minimum antennas required for a valid bearing estimate.
+         3 is a practical minimum; 5 gives the best accuracy. -->
+    <min_elements>3</min_elements>
+
+    <!-- Angular resolution of the MUSIC sweep. 0.5° is a good default.
+         Finer steps (0.1°) improve accuracy but add ~5× compute. -->
+    <angle_step_deg>0.5</angle_step_deg>
+
+    <!-- Discard snapshots from antennas with SNR below this threshold (dB).
+         Low-SNR elements degrade the covariance estimate. -->
+    <snr_threshold_db>3.0</snr_threshold_db>
+  </df>
+
+</df_config>
