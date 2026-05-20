@@ -12,7 +12,7 @@ Usage:
     python3 inject_detections.py --sweep             # rotate 0-360° every 5 s
 """
 
-import argparse, json, math, random, time, struct
+import argparse, base64, json, math, random, time, struct
 import numpy as np
 from proton import Message
 from proton.handlers import MessagingHandler
@@ -33,8 +33,8 @@ ANTENNAS = [
 ]
 
 
-def make_iq(ant_x, ant_y, bearing_deg, freq_hz, snr_db, rng):
-    """Return 2*N_SAMPLES interleaved float32 I,Q values."""
+def make_iq_b64(ant_x, ant_y, bearing_deg, freq_hz, snr_db, rng):
+    """Return base64-encoded raw float32 I,Q bytes (matches schema 1.2 iq_snapshot_b64)."""
     bearing_rad   = math.radians(bearing_deg)
     k             = 2 * math.pi * freq_hz / SPEED_OF_LIGHT
     spatial_phase = k * (ant_x * math.sin(bearing_rad)
@@ -45,7 +45,8 @@ def make_iq(ant_x, ant_y, bearing_deg, freq_hz, snr_db, rng):
     phase = spatial_phase + 2 * math.pi * TONE_HZ * t
     I     = np.cos(phase) + rng.normal(0, noise_sigma, N_SAMPLES)
     Q     = np.sin(phase) + rng.normal(0, noise_sigma, N_SAMPLES)
-    return np.column_stack([I, Q]).ravel().astype(np.float32).tolist()
+    raw   = np.column_stack([I, Q]).ravel().astype(np.float32)
+    return base64.b64encode(raw.tobytes()).decode('ascii')
 
 
 class Injector(MessagingHandler):
@@ -84,19 +85,19 @@ class Injector(MessagingHandler):
         for ant in ANTENNAS:
             if self.args.drop and ant["scanner_id"] in self.args.drop:
                 continue
-            iq = make_iq(ant["x"], ant["y"],
-                         bearing_deg, self.args.freq,
-                         self.args.snr, self.rng)
+            iq_b64 = make_iq_b64(ant["x"], ant["y"],
+                                  bearing_deg, self.args.freq,
+                                  self.args.snr, self.rng)
             body = json.dumps({
                 "msg_type":               "RF_DETECTION",
-                "schema_version":         "1.1",
+                "schema_version":         "1.2",
                 "timestamp_ms":           ts_ms,
                 "scanner_id":             ant["scanner_id"],
                 "center_freq_hz":         self.args.freq,
                 "bandwidth_hz":           200_000,
                 "power_db":               -40.0,
                 "snr_db":                 self.args.snr,
-                "iq_snapshot":            iq,
+                "iq_snapshot_b64":        iq_b64,
                 "snapshot_sample_rate_sps": SAMPLE_RATE,
             })
             msg = Message(body=body, content_type="application/json")

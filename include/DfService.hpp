@@ -52,6 +52,9 @@ private:
     std::thread sweep_thread_;
     std::condition_variable sweep_cv_;
 
+    // O(1) lookup from scanner_id to its AntennaElement — built once in constructor.
+    std::unordered_map<std::string, AntennaElement> antenna_map_;
+
     // Pending snapshots keyed by 100 kHz frequency bucket.
     // Inner map: scanner_id → latest snapshot (dedup per scanner).
     std::mutex agg_mu_;

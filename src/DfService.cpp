@@ -1,5 +1,6 @@
 #include "DfService.hpp"
 
+#include <sdr/Base64.hpp>
 #include <proton/container.hpp>
 #include <proton/message.hpp>
 #include <proton/messaging_handler.hpp>
@@ -68,14 +69,24 @@ public:
         try {
             auto j = json::parse(proton::get<std::string>(m.body()));
             if (j.value("msg_type", "") != "RF_DETECTION") return;
-            if (!j.contains("iq_snapshot") || !j["iq_snapshot"].is_array()) return;
 
             SnapshotEntry e;
             e.scanner_id     = j.value("scanner_id",     "unknown");
             e.center_freq_hz = j.value("center_freq_hz", 0.0);
-            e.snr_db         = j.value("snr_db",         0.0);
+            // Default to a high value when absent so old senders pass the SNR filter.
+            e.snr_db         = j.value("snr_db",         99.0);
             e.timestamp_ms   = j.value("timestamp_ms",   (int64_t)0);
-            e.iq_snapshot    = j["iq_snapshot"].get<std::vector<float>>();
+
+            // Decode IQ snapshot: base64 (schema >= 1.2) or JSON float array (< 1.2).
+            if (j.contains("iq_snapshot_b64") && j["iq_snapshot_b64"].is_string()) {
+                e.iq_snapshot = sdr::base64::decodeFloats(
+                    j["iq_snapshot_b64"].get<std::string>());
+            } else if (j.contains("iq_snapshot") && j["iq_snapshot"].is_array()) {
+                e.iq_snapshot = j["iq_snapshot"].get<std::vector<float>>();
+            } else {
+                return;  // no IQ data — nothing to DF
+            }
+
             on_detection_(std::move(e));
         } catch (const std::exception& ex) {
             spdlog::warn("DfService: parse error: {}", ex.what());
@@ -126,6 +137,8 @@ DfService::DfService(const AppConfig& cfg)
     : cfg_(cfg)
     , engine_(cfg.df.angle_step_deg)
 {
+    for (const auto& a : cfg_.antennas)
+        antenna_map_.emplace(a.scanner_id, a);
 #ifdef DF_WITH_DB
     if (cfg.db.enabled) {
         db_conn_str_ = "host="     + cfg.db.host
@@ -220,12 +233,7 @@ void DfService::onDetection(SnapshotEntry e)
 {
     if (e.iq_snapshot.empty()) return;
     if (e.snr_db < cfg_.df.snr_threshold_db) return;
-
-    // Only accept snapshots from known antennas.
-    bool known = false;
-    for (const auto& a : cfg_.antennas)
-        if (a.scanner_id == e.scanner_id) { known = true; break; }
-    if (!known) return;
+    if (antenna_map_.find(e.scanner_id) == antenna_map_.end()) return;
 
     int64_t bucket = static_cast<int64_t>(e.center_freq_hz / 100e3);  // 100 kHz buckets
 
@@ -261,14 +269,11 @@ void DfService::tryCompute(int64_t bucket)
     double freq_hz = 0.0;
 
     for (const auto& e : entries) {
-        for (const auto& a : cfg_.antennas) {
-            if (a.scanner_id == e.scanner_id) {
-                iq_list.push_back(e.iq_snapshot);
-                ant_list.push_back(a);
-                freq_hz = e.center_freq_hz;
-                break;
-            }
-        }
+        auto it = antenna_map_.find(e.scanner_id);
+        if (it == antenna_map_.end()) continue;
+        iq_list.push_back(e.iq_snapshot);
+        ant_list.push_back(it->second);
+        freq_hz = e.center_freq_hz;
     }
     if (iq_list.size() < 2) return;
 
