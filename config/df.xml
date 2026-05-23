@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- DfApp configuration — 5-element PlutoSDR array -->
+<!-- DfApp configuration — 4-element PlutoSDR array -->
 <df_config>
 
   <scanner_id>df-0</scanner_id>
@@ -7,14 +7,14 @@
   <amqp>
     <url>amqp://localhost:5672</url>
     <username>sdr_ctrl</username>
-    <password>your_password</password>
+    <password>sdr_hw_test</password>
     <detections_topic>rf.detections</detections_topic>
     <df_results_topic>rf.df_results</df_results_topic>
   </amqp>
 
   <database>
     <host>localhost</host><port>5432</port><name>sdr_scanner</name>
-    <user>sdr</user><password>your_password</password>
+    <user>sdr</user><password>sdr_hw_test</password>
   </database>
 
   <!--
@@ -27,11 +27,21 @@
       Elements 1-4: on a circle at 72° intervals
   -->
   <array>
+    <!--
+      L-shaped 4-element array, λ/2 spacing at 300 MHz (~50 cm).
+      UPDATE these values once you physically measure your antenna positions.
+      x = East (m), y = North (m) from antenna 0 (reference).
+
+      Suggested physical layout:
+        [1]
+         |  0.50 m
+        [0]---[2]---[3]
+              0.50m  1.00m
+    -->
     <antenna scanner_id="scanner-0" x="0.00" y="0.00" z="0.00"/>
-    <antenna scanner_id="scanner-1" x="1.90" y="0.62" z="0.00"/>
-    <antenna scanner_id="scanner-2" x="1.18" y="1.62" z="0.00"/>
-    <antenna scanner_id="scanner-3" x="-1.18" y="1.62" z="0.00"/>
-    <antenna scanner_id="scanner-4" x="-1.90" y="0.62" z="0.00"/>
+    <antenna scanner_id="scanner-1" x="0.00" y="0.50" z="0.00"/>
+    <antenna scanner_id="scanner-2" x="0.50" y="0.00" z="0.00"/>
+    <antenna scanner_id="scanner-3" x="1.00" y="0.00" z="0.00"/>
   </array>
 
   <df>
