@@ -30,12 +30,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpq-dev \
         libfftw3-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /usr/lib/pkgconfig \
-    && cp /usr/lib/x86_64-linux-gnu/pkgconfig/libqpid-proton*.pc /usr/lib/pkgconfig/ \
-    && printf 'Name: Proton Core\nDescription: stub\nVersion: 0.37.0\nLibs: -lqpid-proton\n' \
-       > /usr/lib/pkgconfig/libqpid-proton-core.pc \
-    && printf 'Name: Proton Proactor\nDescription: stub\nVersion: 0.37.0\nLibs: -lqpid-proton\n' \
-       > /usr/lib/pkgconfig/libqpid-proton-proactor.pc
+    && sed -i 's|prefix=${pcfiledir}/../..|prefix=/usr|' \
+           /usr/lib/x86_64-linux-gnu/pkgconfig/libqpid-proton*.pc \
+    && printf 'prefix=/usr\nName: Proton Core\nDescription: stub\nVersion: 0.37.0\nLibs: -lqpid-proton\nCflags: -I/usr/include\n' \
+       > /usr/lib/x86_64-linux-gnu/pkgconfig/libqpid-proton-core.pc \
+    && printf 'prefix=/usr\nName: Proton Proactor\nDescription: stub\nVersion: 0.37.0\nLibs: -lqpid-proton\nCflags: -I/usr/include\n' \
+       > /usr/lib/x86_64-linux-gnu/pkgconfig/libqpid-proton-proactor.pc
 
 RUN git clone --depth 1 --branch "main/1.0" \
         https://github.com/BMichaud7/SdrSdk.git /workspace/SdrSdk && \
