@@ -17,6 +17,8 @@ FROM ubuntu:24.04 AS builder
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 
+# Ubuntu 24.04 merges proton-core and proton-proactor into libqpid-proton.pc
+# but libqpid-proton-cpp.pc still lists them as Requires. Stub them out.
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential cmake pkg-config git ca-certificates \
         libqpid-proton11-dev \
@@ -27,7 +29,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libeigen3-dev \
         libpq-dev \
         libfftw3-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && printf 'Name: Proton Core\nDescription: stub\nVersion: 0.37.0\nLibs: -lqpid-proton\n' \
+       > /usr/lib/x86_64-linux-gnu/pkgconfig/libqpid-proton-core.pc \
+    && printf 'Name: Proton Proactor\nDescription: stub\nVersion: 0.37.0\nLibs: -lqpid-proton\n' \
+       > /usr/lib/x86_64-linux-gnu/pkgconfig/libqpid-proton-proactor.pc
 
 RUN git clone --depth 1 --branch "main/1.0" \
         https://github.com/BMichaud7/SdrSdk.git /workspace/SdrSdk && \
