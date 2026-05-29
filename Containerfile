@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libfmt-dev \
         libeigen3-dev \
         libpq-dev \
+        libfftw3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN git clone --depth 1 --branch "main/1.0" \

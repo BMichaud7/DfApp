@@ -1,0 +1,223 @@
+# ════════════════════════════════════════════════════════════════════════
+#  DfApp Direction Finding Service — Kubernetes / k3s Manifests
+#
+#  Prerequisites:
+#    - Apply DfApp PostgreSQL schema first:
+#        psql -U sdr -d sdr_scanner -f schema/init.sql
+#    - sdr-credentials Secret must exist (shared with sdr-system)
+#
+#  Apply:
+#    kubectl apply -f k8s/deployment.yaml
+#
+#  Update config only:
+#    kubectl create configmap df-config -n sdr-system \
+#      --from-file=df.xml=config/df.xml \
+#      --dry-run=client -o yaml | kubectl apply -f -
+#    kubectl rollout restart deployment/sdr-df -n sdr-system
+# ════════════════════════════════════════════════════════════════════════
+
+---
+# ── Namespace (shared with rest of sdr-system) ─────────────────────────
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sdr-system
+  labels:
+    app.kubernetes.io/name: sdr-system
+
+---
+# ── ConfigMap: df.xml ──────────────────────────────────────────────────
+# Antenna array positions (x=East, y=North metres from antenna 0) must
+# match your physical hardware layout. Update before deploying.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: df-config
+  namespace: sdr-system
+  labels:
+    app: sdr-df
+data:
+  df.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <df_config>
+      <scanner_id>df-0</scanner_id>
+
+      <amqp>
+        <url>amqp://activemq-service.sdr-system.svc.cluster.local:5672</url>
+        <username>sdr_ctrl</username>
+        <password>${AMQP_PASSWORD}</password>
+        <detections_topic>rf.detections</detections_topic>
+        <df_results_topic>rf.df_results</df_results_topic>
+      </amqp>
+
+      <database>
+        <host>postgres-service.sdr-system.svc.cluster.local</host>
+        <port>5432</port>
+        <name>sdr_scanner</name>
+        <user>sdr</user>
+        <password>${DB_PASSWORD}</password>
+      </database>
+
+      <!--
+        L-shaped 4-element array, λ/2 spacing at 300 MHz (~50 cm).
+        UPDATE x/y values once you physically measure antenna positions.
+        x = East (m), y = North (m) from antenna 0 (reference).
+      -->
+      <array>
+        <element scanner_id="scanner-0"><x>0.00</x><y>0.00</y></element>
+        <element scanner_id="scanner-1"><x>0.00</x><y>0.50</y></element>
+        <element scanner_id="scanner-2"><x>0.50</x><y>0.00</y></element>
+        <element scanner_id="scanner-3"><x>1.00</x><y>0.00</y></element>
+      </array>
+
+      <engine>
+        <aggregation_window_sec>5</aggregation_window_sec>
+        <freq_bin_hz>100000</freq_bin_hz>
+        <min_elements>3</min_elements>
+        <bearing_step_deg>0.5</bearing_step_deg>
+      </engine>
+    </df_config>
+
+---
+# ── Deployment ─────────────────────────────────────────────────────────
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdr-df
+  namespace: sdr-system
+  labels:
+    app: sdr-df
+    version: "1.0.0"
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: sdr-df
+  template:
+    metadata:
+      labels:
+        app: sdr-df
+        version: "1.0.0"
+    spec:
+      terminationGracePeriodSeconds: 15
+
+      initContainers:
+        - name: render-config
+          image: python:3.12-alpine
+          command:
+            - python3
+            - -c
+            - |
+              import os, string
+              tmpl = open('/tmpl/df.xml').read()
+              out  = string.Template(tmpl).safe_substitute(os.environ)
+              open('/out/df.xml', 'w').write(out)
+          env:
+            - name: AMQP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sdr-credentials
+                  key: amqp-password
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sdr-credentials
+                  key: db-password
+          volumeMounts:
+            - name: config-template
+              mountPath: /tmpl
+              readOnly: true
+            - name: config-rendered
+              mountPath: /out
+
+      containers:
+        - name: sdr-df
+          image: ghcr.io/bmichaud7/sdr-df:1.0.0
+          imagePullPolicy: Always
+
+          env:
+            - name: SDR_LOG_LEVEL
+              value: info
+
+          volumeMounts:
+            - name: config-rendered
+              mountPath: /etc/sdr-df
+              readOnly: true
+
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "256Mi"
+            limits:
+              cpu: "2"
+              memory: "1Gi"
+
+          livenessProbe:
+            exec:
+              command: ["/bin/sh", "-c", "kill -0 1"]
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            failureThreshold: 3
+
+          readinessProbe:
+            exec:
+              command: ["/bin/sh", "-c", "kill -0 1"]
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+
+      volumes:
+        - name: config-template
+          configMap:
+            name: df-config
+        - name: config-rendered
+          emptyDir: {}
+
+---
+# ── NetworkPolicy ─────────────────────────────────────────────────────
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sdr-df-netpol
+  namespace: sdr-system
+spec:
+  podSelector:
+    matchLabels:
+      app: sdr-df
+  policyTypes:
+    - Ingress
+    - Egress
+  egress:
+    # AMQP to broker (subscribe to rf.detections, publish rf.df_results)
+    - to:
+        - podSelector:
+            matchLabels:
+              app: activemq
+      ports:
+        - port: 5672
+          protocol: TCP
+    # PostgreSQL for df_results persistence
+    - to:
+        - podSelector:
+            matchLabels:
+              app: postgres
+      ports:
+        - port: 5432
+          protocol: TCP
+    # DNS
+    - to:
+        - namespaceSelector: {}
+      ports:
+        - port: 53
+          protocol: UDP
+        - port: 53
+          protocol: TCP
