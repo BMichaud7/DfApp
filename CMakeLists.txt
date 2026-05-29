@@ -142,24 +142,27 @@ install(FILES config/df.xml
         DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/sdr-df)
 
 # ── Tests ─────────────────────────────────────────────────────────────────────
-include(FetchContent)
-FetchContent_Declare(googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG        v1.14.0)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-enable_testing()
+include(CTest)
+if(BUILD_TESTING)
+    include(FetchContent)
+    FetchContent_Declare(googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG        v1.14.0)
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(googletest)
+    enable_testing()
 
-add_executable(df_tests tests/unit/test_df_engine.cpp src/DfEngine.cpp src/Config.cpp)
-target_include_directories(df_tests PRIVATE include)
-target_link_libraries(df_tests PRIVATE
-    sdr_task_api
-    Eigen3::Eigen
-    spdlog::spdlog
-    PkgConfig::TINYXML2
-    GTest::gtest_main
-)
-target_compile_options(df_tests PRIVATE -O2)
+    add_executable(df_tests tests/unit/test_df_engine.cpp src/DfEngine.cpp src/Config.cpp)
+    target_include_directories(df_tests PRIVATE include)
+    target_link_libraries(df_tests PRIVATE
+        sdr_task_api
+        Eigen3::Eigen
+        spdlog::spdlog
+        PkgConfig::TINYXML2
+        GTest::gtest_main
+    )
+    target_compile_options(df_tests PRIVATE -O2)
+endif()
 include(GoogleTest)
 gtest_discover_tests(df_tests)
 

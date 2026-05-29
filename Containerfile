@@ -53,6 +53,7 @@ RUN cmake -B build \
         -DCMAKE_INSTALL_PREFIX=/install \
         -DFETCHCONTENT_QUIET=OFF \
         -DWITH_DB=ON \
+        -DBUILD_TESTING=OFF \
     && cmake --build build --parallel "$(nproc)" \
     && cmake --install build
 
