@@ -162,9 +162,9 @@ if(BUILD_TESTING)
         GTest::gtest_main
     )
     target_compile_options(df_tests PRIVATE -O2)
+    include(GoogleTest)
+    gtest_discover_tests(df_tests)
 endif()
-include(GoogleTest)
-gtest_discover_tests(df_tests)
 
 message(STATUS "┌─ DfApp ${PROJECT_VERSION} ──────────────────────────────────┐")
 message(STATUS "│  C++ standard  : C++20                                       │")
