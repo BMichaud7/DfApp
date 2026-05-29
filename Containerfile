@@ -19,6 +19,7 @@ ENV TZ=UTC
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential cmake pkg-config git ca-certificates \
+        libqpid-proton12-dev \
         libqpid-proton-cpp12-dev \
         libtinyxml2-dev \
         libspdlog-dev \
