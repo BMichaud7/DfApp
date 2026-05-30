@@ -1,4 +1,5 @@
 #include "DfService.hpp"
+#include "au/units/seconds.hh"
 
 #include <sdr/Base64.hpp>
 #include <proton/container.hpp>
@@ -208,8 +209,10 @@ void DfService::sweepLoop()
         for (auto it = pending_.begin(); it != pending_.end(); ) {
             auto& slot = it->second;
             // Evict snapshots older than the aggregation window.
+            const int64_t window_ms = static_cast<int64_t>(
+                cfg_.df.aggregation_window.in(au::seconds) * 1000.0);
             for (auto si = slot.begin(); si != slot.end(); ) {
-                if ((now_ms - si->second.timestamp_ms) > cfg_.df.aggregation_window_ms)
+                if ((now_ms - si->second.timestamp_ms) > window_ms)
                     si = slot.erase(si);
                 else
                     ++si;

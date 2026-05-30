@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "au/units/hertz.hh"
+#include "au/units/seconds.hh"
 
 namespace df {
 
@@ -31,11 +33,11 @@ struct AntennaElement {
 };
 
 struct DfParams {
-    std::string algorithm            = "MUSIC";
-    int         aggregation_window_ms = 5000;   // max age of a snapshot for aggregation
-    int         min_elements         = 3;       // minimum antennas needed for a solution
-    double      angle_step_deg       = 0.5;     // MUSIC sweep resolution
-    double      snr_threshold_db     = 3.0;     // minimum per-antenna SNR to include
+    std::string               algorithm          = "MUSIC";
+    au::QuantityD<au::Seconds> aggregation_window = au::seconds(5.0); // max age of a snapshot for aggregation
+    int                        min_elements       = 3;                // minimum antennas needed for a solution
+    double                     angle_step_deg     = 0.5;             // MUSIC sweep resolution
+    double                     snr_threshold_db   = 3.0;             // minimum per-antenna SNR to include
 };
 
 struct AppConfig {

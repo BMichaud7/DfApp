@@ -2,6 +2,7 @@
 #include <tinyxml2.h>
 #include <stdexcept>
 #include <spdlog/spdlog.h>
+#include "au/units/seconds.hh"
 
 namespace df {
 
@@ -85,11 +86,16 @@ AppConfig parseConfig(const std::string& xml_path)
     // <df>
     const auto* df = root->FirstChildElement("df");
     if (df) {
-        cfg.df.algorithm             = xmlText  (df, "algorithm",             cfg.df.algorithm);
-        cfg.df.aggregation_window_ms = xmlInt   (df, "aggregation_window_ms", cfg.df.aggregation_window_ms);
-        cfg.df.min_elements          = xmlInt   (df, "min_elements",          cfg.df.min_elements);
-        cfg.df.angle_step_deg        = xmlDouble(df, "angle_step_deg",        cfg.df.angle_step_deg);
-        cfg.df.snr_threshold_db      = xmlDouble(df, "snr_threshold_db",      cfg.df.snr_threshold_db);
+        cfg.df.algorithm           = xmlText  (df, "algorithm",             cfg.df.algorithm);
+        {
+            // XML stores the window in milliseconds; convert to seconds at the boundary.
+            int default_ms = static_cast<int>(cfg.df.aggregation_window.in(au::seconds) * 1000.0);
+            int window_ms  = xmlInt(df, "aggregation_window_ms", default_ms);
+            cfg.df.aggregation_window = au::seconds(window_ms / 1000.0);
+        }
+        cfg.df.min_elements        = xmlInt   (df, "min_elements",          cfg.df.min_elements);
+        cfg.df.angle_step_deg      = xmlDouble(df, "angle_step_deg",        cfg.df.angle_step_deg);
+        cfg.df.snr_threshold_db    = xmlDouble(df, "snr_threshold_db",      cfg.df.snr_threshold_db);
     }
 
     spdlog::info("DfApp config: scanner={} antennas={} algorithm={} min_elements={}",

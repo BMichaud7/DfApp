@@ -77,6 +77,19 @@ endif()
 # ── tinyxml2 ──────────────────────────────────────────────────────────────────
 pkg_check_modules(TINYXML2 REQUIRED IMPORTED_TARGET tinyxml2)
 
+# ── Au units (header-only) ────────────────────────────────────────────────────
+# Au is fetched by SdrSdk when used as a subdirectory.  Add a fallback so
+# DfApp can also build standalone.
+if(NOT TARGET Au::au)
+    include(FetchContent)
+    FetchContent_Declare(Au
+        GIT_REPOSITORY https://github.com/aurora-opensource/au
+        GIT_TAG        "0.5.1"
+        GIT_SHALLOW    TRUE
+        EXCLUDE_FROM_ALL)
+    FetchContent_MakeAvailable(Au)
+endif()
+
 # ── libpqxx (optional) ────────────────────────────────────────────────────────
 option(WITH_DB "Enable PostgreSQL df_results persistence via libpqxx" OFF)
 if(WITH_DB)
@@ -120,6 +133,7 @@ target_link_libraries(sdr_df PRIVATE
     spdlog::spdlog
     PkgConfig::TINYXML2
     Threads::Threads
+    Au::au
 )
 
 if(ProtonCpp_FOUND)
@@ -160,6 +174,7 @@ if(BUILD_TESTING)
         spdlog::spdlog
         PkgConfig::TINYXML2
         GTest::gtest_main
+        Au::au
     )
     target_compile_options(df_tests PRIVATE -O2)
     include(GoogleTest)
