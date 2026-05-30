@@ -1,6 +1,8 @@
 #pragma once
 #include "Config.hpp"
 #include "DfEngine.hpp"
+#include <au/units/hertz.hh>
+#include <au/units/seconds.hh>
 #include <atomic>
 #include <chrono>
 #include <condition_variable>
@@ -22,11 +24,11 @@ namespace df {
 class ServiceAmqpHandler;
 
 struct SnapshotEntry {
-    std::string        scanner_id;
-    std::vector<float> iq_snapshot;      // interleaved I,Q float32
-    double             center_freq_hz{0};
-    double             snr_db{0};
-    int64_t            timestamp_ms{0};
+    std::string              scanner_id;
+    std::vector<float>       iq_snapshot;      // interleaved I,Q float32
+    au::QuantityD<au::Hertz> center_freq_hz{au::hertz(0.0)};
+    double                   snr_db{0};
+    au::QuantityD<au::Seconds> timestamp_ms{au::seconds(0.0)};
 };
 
 // Aggregates RF_DETECTION snapshots from multiple AcquisitionApp instances

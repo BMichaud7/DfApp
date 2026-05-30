@@ -1,5 +1,4 @@
 #include "DfService.hpp"
-#include "au/units/seconds.hh"
 
 #include <sdr/Base64.hpp>
 #include <proton/container.hpp>
@@ -73,10 +72,10 @@ public:
 
             SnapshotEntry e;
             e.scanner_id     = j.value("scanner_id",     "unknown");
-            e.center_freq_hz = j.value("center_freq_hz", 0.0);
+            e.center_freq_hz = au::hertz(j.value("center_freq_hz", 0.0));
             // Default to a high value when absent so old senders pass the SNR filter.
             e.snr_db         = j.value("snr_db",         99.0);
-            e.timestamp_ms   = j.value("timestamp_ms",   (int64_t)0);
+            e.timestamp_ms   = au::seconds(j.value("timestamp_ms", 0.0) / 1000.0);
 
             // Decode IQ snapshot: base64 (schema >= 1.2) or JSON float array (< 1.2).
             if (j.contains("iq_snapshot_b64") && j["iq_snapshot_b64"].is_string()) {
@@ -202,17 +201,16 @@ void DfService::sweepLoop()
         sweep_cv_.wait_for(lk, std::chrono::milliseconds(250));
         if (!running_.load()) break;
 
-        int64_t now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-            std::chrono::system_clock::now().time_since_epoch()).count();
+        au::QuantityD<au::Seconds> now_s = au::seconds(
+            static_cast<double>(std::chrono::duration_cast<std::chrono::milliseconds>(
+                std::chrono::system_clock::now().time_since_epoch()).count()) / 1000.0);
 
         std::vector<int64_t> ready_buckets;
         for (auto it = pending_.begin(); it != pending_.end(); ) {
             auto& slot = it->second;
             // Evict snapshots older than the aggregation window.
-            const int64_t window_ms = static_cast<int64_t>(
-                cfg_.df.aggregation_window.in(au::seconds) * 1000.0);
             for (auto si = slot.begin(); si != slot.end(); ) {
-                if ((now_ms - si->second.timestamp_ms) > window_ms)
+                if ((now_s - si->second.timestamp_ms) > cfg_.df.aggregation_window)
                     si = slot.erase(si);
                 else
                     ++si;
@@ -238,7 +236,7 @@ void DfService::onDetection(SnapshotEntry e)
     if (e.snr_db < cfg_.df.snr_threshold_db) return;
     if (antenna_map_.find(e.scanner_id) == antenna_map_.end()) return;
 
-    int64_t bucket = static_cast<int64_t>(e.center_freq_hz / 100e3);  // 100 kHz buckets
+    int64_t bucket = static_cast<int64_t>(e.center_freq_hz.in(au::hertz) / 100e3);  // 100 kHz buckets
 
     bool should_compute = false;
     {
@@ -269,25 +267,25 @@ void DfService::tryCompute(int64_t bucket)
     // Build ordered lists (same index = same antenna).
     std::vector<std::vector<float>> iq_list;
     std::vector<AntennaElement>     ant_list;
-    double freq_hz = 0.0;
+    au::QuantityD<au::Hertz> freq{au::hertz(0.0)};
 
     for (const auto& e : entries) {
         auto it = antenna_map_.find(e.scanner_id);
         if (it == antenna_map_.end()) continue;
         iq_list.push_back(e.iq_snapshot);
         ant_list.push_back(it->second);
-        freq_hz = e.center_freq_hz;
+        freq = e.center_freq_hz;
     }
     if (iq_list.size() < 2) return;
 
-    DfResult r = engine_.compute(iq_list, ant_list, freq_hz);
+    DfResult r = engine_.compute(iq_list, ant_list, freq);
     if (!r.valid) {
-        spdlog::debug("DfService: MUSIC inconclusive at {:.3f} MHz", freq_hz / 1e6);
+        spdlog::debug("DfService: MUSIC inconclusive at {:.3f} MHz", freq.in(au::hertz) / 1e6);
         return;
     }
 
     spdlog::info("DfService: {:.3f} MHz → {:.1f}° (confidence={:.2f}, M={})",
-                 freq_hz / 1e6, r.azimuth_deg, r.confidence, r.num_elements);
+                 freq.in(au::hertz) / 1e6, r.azimuth_deg, r.confidence, r.num_elements);
 
     publishResult(r, ant_list, entries);
 
@@ -303,7 +301,7 @@ void DfService::publishResult(const DfResult& r,
     json j;
     j["msg_type"]       = "DF_RESULT";
     j["scanner_id"]     = cfg_.scanner_id;
-    j["center_freq_hz"] = r.center_freq_hz;
+    j["center_freq_hz"] = r.center_freq_hz.in(au::hertz);
     j["azimuth_deg"]    = r.azimuth_deg;
     j["confidence"]     = r.confidence;
     j["num_elements"]   = r.num_elements;
@@ -344,7 +342,7 @@ void DfService::persistResult(const DfResult& r,
             " (center_freq_hz, azimuth_deg, confidence, num_elements,"
             "  algorithm, scanner_ids)"
             " VALUES ($1,$2,$3,$4,$5,$6)",
-            static_cast<int64_t>(r.center_freq_hz),
+            static_cast<int64_t>(r.center_freq_hz.in(au::hertz)),
             r.azimuth_deg,
             r.confidence,
             r.num_elements,

@@ -1,4 +1,5 @@
 #include "DfEngine.hpp"
+#include <au/units/hertz.hh>
 #include <Eigen/Dense>
 #include <Eigen/Eigenvalues>
 #include <cmath>
@@ -16,11 +17,13 @@ DfEngine::DfEngine(double angle_step_deg)
 DfResult DfEngine::compute(
     const std::vector<std::vector<float>>& iq_snapshots,
     const std::vector<AntennaElement>&     antennas,
-    double freq_hz) const
+    au::QuantityD<au::Hertz> freq) const
 {
     DfResult result;
-    result.center_freq_hz = freq_hz;
+    result.center_freq_hz = freq;
     result.algorithm      = "MUSIC";
+
+    const double freq_hz = freq.in(au::hertz);
 
     int M = static_cast<int>(iq_snapshots.size());
     if (M < 2 || M != static_cast<int>(antennas.size())) {
