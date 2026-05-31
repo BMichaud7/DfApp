@@ -134,7 +134,7 @@ spec:
 
       containers:
         - name: sdr-df
-          image: ghcr.io/bmichaud7/sdr-df:1.0.0
+          image: ghcr.io/bmichaud7/sdr-df:1.1.0
           imagePullPolicy: Always
 
           env:
