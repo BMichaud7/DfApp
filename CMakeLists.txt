@@ -41,9 +41,30 @@ if(NOT Eigen3_FOUND)
 endif()
 
 # ── qpid-proton C++ ───────────────────────────────────────────────────────────
+# Ubuntu 24.04's libqpid-proton-cpp.pc has broken transitive deps; fall back
+# to find_path/find_library when pkg-config fails.
 find_package(ProtonCpp QUIET)
 if(NOT ProtonCpp_FOUND)
-    pkg_check_modules(PROTON REQUIRED IMPORTED_TARGET libqpid-proton-cpp)
+    pkg_check_modules(PROTON QUIET IMPORTED_TARGET qpid-proton-cpp)
+    if(NOT PROTON_FOUND)
+        pkg_check_modules(PROTON QUIET IMPORTED_TARGET libqpid-proton-cpp)
+    endif()
+    if(NOT PROTON_FOUND)
+        find_library(PROTON_CPP_LIB NAMES qpid-proton-cpp)
+        find_path(PROTON_INCLUDE_DIR NAMES proton/connection.hpp)
+        if(PROTON_CPP_LIB AND PROTON_INCLUDE_DIR)
+            add_library(PkgConfig::PROTON INTERFACE IMPORTED)
+            set_target_properties(PkgConfig::PROTON PROPERTIES
+                INTERFACE_INCLUDE_DIRECTORIES "${PROTON_INCLUDE_DIR}"
+                INTERFACE_LINK_LIBRARIES      "${PROTON_CPP_LIB}")
+            set(PROTON_FOUND 1)
+            message(STATUS "[DfApp] qpid-proton-cpp found via find_library: ${PROTON_CPP_LIB}")
+        else()
+            message(FATAL_ERROR "[DfApp] qpid-proton-cpp not found.\n"
+                "  Ubuntu/Debian: sudo apt-get install libqpid-proton-cpp12-dev\n"
+                "  CentOS/RHEL  : sudo dnf install qpid-proton-cpp-devel")
+        endif()
+    endif()
 endif()
 
 # ── nlohmann/json ─────────────────────────────────────────────────────────────
