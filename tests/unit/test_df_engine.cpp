@@ -148,7 +148,7 @@ TEST_F(DfEngineTest, TwoElements_ReturnsResult)
 {
     auto two_ant = std::vector<df::AntennaElement>{uca_[0], uca_[1]};
     auto snap    = makeSyntheticSnapshot(two_ant, 60.0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, two_ant, FREQ_HZ);
+    auto r = engine_.compute(snap, two_ant, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_EQ(r.num_elements, 2);
 }
@@ -158,14 +158,14 @@ TEST_F(DfEngineTest, OneElement_ReturnsInvalid)
 {
     auto one_ant = std::vector<df::AntennaElement>{uca_[0]};
     auto snap    = std::vector<std::vector<float>>{makeIq(0,0, 0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_)};
-    auto r = engine_.compute(snap, one_ant, FREQ_HZ);
+    auto r = engine_.compute(snap, one_ant, au::hertz(FREQ_HZ));
     EXPECT_FALSE(r.valid);
 }
 
 // Empty snapshot → invalid
 TEST_F(DfEngineTest, EmptySnapshots_ReturnsInvalid)
 {
-    auto r = engine_.compute({}, {}, FREQ_HZ);
+    auto r = engine_.compute({}, {}, au::hertz(FREQ_HZ));
     EXPECT_FALSE(r.valid);
 }
 
@@ -175,7 +175,7 @@ TEST_F(DfEngineTest, UhfFrequency_433MHz)
 {
     constexpr double UHF = 433e6;
     auto snap = makeSyntheticSnapshot(uca_, 220.0, UHF, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, UHF);
+    auto r = engine_.compute(snap, uca_, au::hertz(UHF));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 220.0), TOLERANCE_DEG)
         << "got " << r.azimuth_deg << "°";
@@ -190,11 +190,11 @@ TEST_F(DfEngineTest, MoreElements_BetterAccuracyAtModerateSnr)
     constexpr double BEARING = 30.0;
 
     auto snap5 = makeSyntheticSnapshot(uca_, BEARING, FREQ_HZ, N_SAMP, MOD_SNR, rng_);
-    auto r5    = engine_.compute(snap5, uca_, FREQ_HZ);
+    auto r5    = engine_.compute(snap5, uca_, au::hertz(FREQ_HZ));
 
     auto two_ant = std::vector<df::AntennaElement>{uca_[0], uca_[1]};
     auto snap2   = makeSyntheticSnapshot(two_ant, BEARING, FREQ_HZ, N_SAMP, MOD_SNR, rng_);
-    auto r2      = engine_.compute(snap2, two_ant, FREQ_HZ);
+    auto r2      = engine_.compute(snap2, two_ant, au::hertz(FREQ_HZ));
 
     // 5 elements must recover the bearing; 2 elements may be less accurate.
     EXPECT_TRUE(r5.valid);
