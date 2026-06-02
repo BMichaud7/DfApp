@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(DfApp VERSION 1.0.0 LANGUAGES CXX)
+project(DfApp VERSION 1.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -90,7 +90,9 @@ if(NOT spdlog_FOUND)
         include(FetchContent)
         FetchContent_Declare(spdlog
             GIT_REPOSITORY https://github.com/gabime/spdlog.git
-            GIT_TAG        v1.13.0)
+            GIT_TAG        v1.14.1
+            GIT_SHALLOW    TRUE
+            EXCLUDE_FROM_ALL)
         FetchContent_MakeAvailable(spdlog)
     endif()
 endif()

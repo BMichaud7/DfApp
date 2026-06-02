@@ -1,5 +1,6 @@
 #include "DfEngine.hpp"
 #include "Config.hpp"
+#include <au/units/hertz.hh>
 #include <gtest/gtest.h>
 #include <cmath>
 #include <random>
@@ -87,7 +88,7 @@ protected:
 TEST_F(DfEngineTest, KnownBearing_North_0deg)
 {
     auto snap = makeSyntheticSnapshot(uca_, 0.0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, FREQ_HZ);
+    auto r = engine_.compute(snap, uca_, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 0.0), TOLERANCE_DEG)
         << "got " << r.azimuth_deg << "°";
@@ -97,7 +98,7 @@ TEST_F(DfEngineTest, KnownBearing_North_0deg)
 TEST_F(DfEngineTest, KnownBearing_East_90deg)
 {
     auto snap = makeSyntheticSnapshot(uca_, 90.0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, FREQ_HZ);
+    auto r = engine_.compute(snap, uca_, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 90.0), TOLERANCE_DEG)
         << "got " << r.azimuth_deg << "°";
@@ -106,7 +107,7 @@ TEST_F(DfEngineTest, KnownBearing_East_90deg)
 TEST_F(DfEngineTest, KnownBearing_South_180deg)
 {
     auto snap = makeSyntheticSnapshot(uca_, 180.0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, FREQ_HZ);
+    auto r = engine_.compute(snap, uca_, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 180.0), TOLERANCE_DEG)
         << "got " << r.azimuth_deg << "°";
@@ -115,7 +116,7 @@ TEST_F(DfEngineTest, KnownBearing_South_180deg)
 TEST_F(DfEngineTest, KnownBearing_West_270deg)
 {
     auto snap = makeSyntheticSnapshot(uca_, 270.0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, FREQ_HZ);
+    auto r = engine_.compute(snap, uca_, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 270.0), TOLERANCE_DEG)
         << "got " << r.azimuth_deg << "°";
@@ -124,7 +125,7 @@ TEST_F(DfEngineTest, KnownBearing_West_270deg)
 TEST_F(DfEngineTest, KnownBearing_Diagonal_135deg)
 {
     auto snap = makeSyntheticSnapshot(uca_, 135.0, FREQ_HZ, N_SAMP, HIGH_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, FREQ_HZ);
+    auto r = engine_.compute(snap, uca_, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 135.0), TOLERANCE_DEG)
         << "got " << r.azimuth_deg << "°";
@@ -136,7 +137,7 @@ TEST_F(DfEngineTest, LowSnr_6dB_StillConverges)
     constexpr double LOW_SNR = 6.0;
     constexpr double RELAXED = 5.0;
     auto snap = makeSyntheticSnapshot(uca_, 45.0, FREQ_HZ, N_SAMP, LOW_SNR, rng_);
-    auto r = engine_.compute(snap, uca_, FREQ_HZ);
+    auto r = engine_.compute(snap, uca_, au::hertz(FREQ_HZ));
     EXPECT_TRUE(r.valid);
     EXPECT_LT(angleDiff(r.azimuth_deg, 45.0), RELAXED)
         << "got " << r.azimuth_deg << "°";
