@@ -117,3 +117,11 @@ AppConfig parseConfig(const std::string& xml_path)
 }
 
 } // namespace df
+
+/*
+========================================================================
+End of file — OpenRFStack
+Subject to Personal Use License
+https://github.com/OpenRFStack
+========================================================================
+*/

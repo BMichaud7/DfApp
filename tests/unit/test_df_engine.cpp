@@ -216,3 +216,11 @@ TEST_F(DfEngineTest, MoreElements_BetterAccuracyAtModerateSnr)
     EXPECT_GE(r5.confidence, r2.confidence)
         << "5-el=" << r5.confidence << " 2-el=" << r2.confidence;
 }
+
+/*
+========================================================================
+End of file — OpenRFStack
+Subject to Personal Use License
+https://github.com/OpenRFStack
+========================================================================
+*/
