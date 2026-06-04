@@ -10,6 +10,14 @@ Do not use for commercial, organizational, or military purposes.
 Contact author for permission: https://github.com/OpenRFStack
 ========================================================================
 */
+/**
+ * @file DfService.hpp
+ * @brief Background AMQP subscriber that feeds IQ snapshots into the MUSIC direction finder.
+ *
+ * Subscribes to rf.detections, accumulates IQ snapshots from multiple
+antenna elements, and triggers the MUSIC algorithm when all elements have
+reported for a given signal. Publishes DF_RESULT to rf.df_results.
+ */
 #pragma once
 #include "Config.hpp"
 #include "DfEngine.hpp"
