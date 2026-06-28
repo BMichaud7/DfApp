@@ -44,6 +44,10 @@ DfResult DfEngine::compute(
     }
 
     int N = static_cast<int>(iq_snapshots[0].size()) / 2;  // samples per element
+    // Clamp N to the smallest snapshot so the data matrix loop never OOBs on
+    // shorter snapshots from other scanner nodes.
+    for (int i = 1; i < M; ++i)
+        N = std::min(N, static_cast<int>(iq_snapshots[i].size()) / 2);
     if (N < 16) {
         spdlog::warn("DfEngine: snapshot too short ({} samples)", N);
         return result;

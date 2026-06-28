@@ -111,7 +111,7 @@ public:
                                 [this]{ return pub_ready_; })) return;
         if (!work_queue_) return;
         work_queue_->add([this, body]{
-            if (pub_sender_ && pub_sender_.credit() > 0) {
+            if (pub_sender_) {
                 proton::message msg;
                 msg.body(body);
                 msg.content_type("application/json");
@@ -332,6 +332,7 @@ void DfService::persistResult(const DfResult& r,
                                const std::vector<SnapshotEntry>& snapshots)
 {
     if (db_conn_str_.empty()) return;
+    std::lock_guard<std::mutex> db_lk(db_mu_);
     if (!db_conn_ || !db_conn_->is_open()) {
         try { db_conn_ = std::make_unique<pqxx::connection>(db_conn_str_); }
         catch (const std::exception& ex) {

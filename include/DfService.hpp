@@ -94,6 +94,7 @@ private:
                        const std::vector<SnapshotEntry>&  used_snapshots);
 
 #ifdef DF_WITH_DB
+    std::mutex db_mu_;  // guards db_conn_ — persistResult can be called concurrently
     std::unique_ptr<pqxx::connection> db_conn_;
     std::string db_conn_str_;
     void persistResult(const DfResult& r,
