@@ -183,7 +183,16 @@ void DfService::stop()
 {
     if (!running_.exchange(false)) return;
     sweep_cv_.notify_all();
-    if (amqp_container_) amqp_container_->stop();
+    {
+        // Copy under agg_mu_ to avoid data race with subscriptionLoop()
+        // reassigning amqp_container_ between reconnect attempts.
+        std::shared_ptr<proton::container> c;
+        {
+            std::lock_guard<std::mutex> lk(agg_mu_);
+            c = amqp_container_;
+        }
+        if (c) c->stop();
+    }
     if (sub_thread_.joinable())   sub_thread_.join();
     if (sweep_thread_.joinable()) sweep_thread_.join();
     spdlog::info("DfService: stopped");
@@ -193,9 +202,15 @@ void DfService::subscriptionLoop()
 {
     while (running_.load()) {
         auto on_det = [this](SnapshotEntry e){ onDetection(std::move(e)); };
-        amqp_handler_    = std::make_shared<ServiceAmqpHandler>(cfg_.amqp, on_det);
-        amqp_container_  = std::make_shared<proton::container>(*amqp_handler_);
-        try { amqp_container_->run(); }
+        std::shared_ptr<proton::container> container;
+        {
+            std::lock_guard<std::mutex> lk(agg_mu_);
+            if (!running_.load()) break;
+            amqp_handler_   = std::make_shared<ServiceAmqpHandler>(cfg_.amqp, on_det);
+            amqp_container_ = std::make_shared<proton::container>(*amqp_handler_);
+            container = amqp_container_;
+        }
+        try { container->run(); }
         catch (const std::exception& ex) {
             spdlog::error("DfService: AMQP error: {}", ex.what());
         }
@@ -323,8 +338,13 @@ void DfService::publishResult(const DfResult& r,
     for (const auto& e : snapshots) ids.push_back(e.scanner_id);
     j["contributing_scanners"] = ids;
 
-    if (amqp_handler_)
-        amqp_handler_->publish(j.dump());
+    std::shared_ptr<ServiceAmqpHandler> h;
+    {
+        std::lock_guard<std::mutex> lk(agg_mu_);
+        h = amqp_handler_;
+    }
+    if (h)
+        h->publish(j.dump());
 }
 
 #ifdef DF_WITH_DB
