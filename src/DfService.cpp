@@ -28,6 +28,7 @@ Contact author for permission: https://github.com/OpenRFStack
 #include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
 
+#include <atomic>
 #include <chrono>
 #include <algorithm>
 
@@ -70,7 +71,7 @@ public:
 
     void on_sender_open(proton::sender& s) override {
         pub_sender_ = s;
-        work_queue_ = &s.work_queue();
+        work_queue_.store(&s.work_queue());
         std::lock_guard<std::mutex> lk(ready_mu_);
         pub_ready_ = true;
         ready_cv_.notify_all();
@@ -109,8 +110,9 @@ public:
         std::unique_lock<std::mutex> lk(ready_mu_);
         if (!ready_cv_.wait_for(lk, std::chrono::seconds(5),
                                 [this]{ return pub_ready_; })) return;
-        if (!work_queue_) return;
-        work_queue_->add([this, body]{
+        auto* wq = work_queue_.load();
+        if (!wq) return;
+        wq->add([this, body]{
             if (pub_sender_) {
                 proton::message msg;
                 msg.body(body);
@@ -122,8 +124,8 @@ public:
     }
 
     void close() {
-        if (work_queue_)
-            work_queue_->add([this]{ pub_sender_.connection().close(); });
+        if (auto* wq = work_queue_.load())
+            wq->add([this]{ pub_sender_.connection().close(); });
     }
 
     void on_transport_error(proton::transport& t) override {
@@ -136,8 +138,8 @@ public:
 private:
     AmqpConfig cfg_;
     std::function<void(SnapshotEntry)> on_detection_;
-    proton::sender      pub_sender_;
-    proton::work_queue* work_queue_{nullptr};
+    proton::sender                   pub_sender_;
+    std::atomic<proton::work_queue*> work_queue_{nullptr};
     std::mutex          ready_mu_;
     std::condition_variable ready_cv_;
     bool                pub_ready_{false};
