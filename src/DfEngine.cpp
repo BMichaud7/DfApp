@@ -23,8 +23,12 @@ static constexpr double SPEED_OF_LIGHT = 2.998e8;
 static constexpr double PI             = M_PI;
 
 DfEngine::DfEngine(double angle_step_deg)
-    : angle_step_deg_(angle_step_deg)
-{}
+    : angle_step_deg_(std::max(angle_step_deg, 0.1))
+{
+    if (angle_step_deg < 0.1)
+        spdlog::warn("DfEngine: angle_step_deg={} clamped to 0.1 to prevent infinite sweep",
+                     angle_step_deg);
+}
 
 DfResult DfEngine::compute(
     const std::vector<std::vector<float>>& iq_snapshots,
