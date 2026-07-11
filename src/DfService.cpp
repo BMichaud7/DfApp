@@ -128,6 +128,14 @@ public:
             wq->add([this]{ pub_sender_.connection().close(); });
     }
 
+    // Called by subscriptionLoop() after container->run() returns so that
+    // publishResult() can't load a dangling work_queue_ from a freed container.
+    void clear_work_queue() {
+        work_queue_.store(nullptr);
+        std::lock_guard<std::mutex> lk(ready_mu_);
+        pub_ready_ = false;
+    }
+
     void on_transport_error(proton::transport& t) override {
         spdlog::warn("DfService: transport error: {}", t.error().what());
     }
@@ -215,6 +223,13 @@ void DfService::subscriptionLoop()
         try { container->run(); }
         catch (const std::exception& ex) {
             spdlog::error("DfService: AMQP error: {}", ex.what());
+        }
+        // Clear work_queue_ before the container shared_ptr is released so
+        // any concurrent publish() call sees null and returns early instead
+        // of posting to a freed proton::work_queue.
+        {
+            std::lock_guard<std::mutex> lk(agg_mu_);
+            if (amqp_handler_) amqp_handler_->clear_work_queue();
         }
         if (!running_.load()) break;
         spdlog::info("DfService: reconnecting in 3 s…");
