@@ -233,7 +233,8 @@ void DfService::subscriptionLoop()
         }
         if (!running_.load()) break;
         spdlog::info("DfService: reconnecting in 3 s…");
-        std::this_thread::sleep_for(std::chrono::seconds(3));
+        for (int i = 0; i < 30 && running_.load(); ++i)
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
 
