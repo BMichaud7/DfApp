@@ -99,12 +99,13 @@ DfResult DfEngine::compute(
 
         Eigen::VectorXcd a(M);
         for (int i = 0; i < M; ++i) {
-            // Standard array processing convention: phase advance = +k·(x·sinθ + y·cosθ)
-            // Antennas with positive projection towards the source receive the
-            // wavefront earlier → positive phase (phase-advance convention).
+            // Phase-delay convention: a_i(θ) = exp(-j·k·(x_i·sinθ + y_i·cosθ))
+            // The covariance R is built from the raw received signal, which has
+            // phase delay proportional to the path length projection. The steering
+            // vector must use the same sign or MUSIC mirrors bearings across N-S.
             double phase = k * (antennas[i].x * std::sin(bearing_rad)
                                + antennas[i].y * std::cos(bearing_rad));
-            a(i) = std::exp(Cx(0.0, phase));
+            a(i) = std::exp(Cx(0.0, -phase));
         }
 
         // P(θ) = 1 / ‖Eₙᴴ a‖²
