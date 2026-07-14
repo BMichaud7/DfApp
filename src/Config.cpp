@@ -87,9 +87,9 @@ AppConfig parseConfig(const std::string& xml_path)
              el = el->NextSiblingElement("antenna")) {
             AntennaElement a;
             a.scanner_id = el->Attribute("scanner_id") ? el->Attribute("scanner_id") : "";
-            if (const char* v = el->Attribute("x")) a.x = std::stod(v);
-            if (const char* v = el->Attribute("y")) a.y = std::stod(v);
-            if (const char* v = el->Attribute("z")) a.z = std::stod(v);
+            if (const char* v = el->Attribute("x")) try { a.x = std::stod(v); } catch (...) {}
+            if (const char* v = el->Attribute("y")) try { a.y = std::stod(v); } catch (...) {}
+            if (const char* v = el->Attribute("z")) try { a.z = std::stod(v); } catch (...) {}
             if (!a.scanner_id.empty())
                 cfg.antennas.push_back(a);
         }
